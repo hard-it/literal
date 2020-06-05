@@ -13,7 +13,7 @@
             text-transform: uppercase;
             margin: 20px 0;
         }
-        .filter,.read{
+        .filter{
             margin: 0 5px
         }
         .filter__txt{
@@ -22,7 +22,7 @@
         .list{
             display: flex;
             padding: 0;
-            margin: 15px;
+            margin: 15px 0;
             list-style:none
         }
 
@@ -41,6 +41,9 @@
         .buttons__item.green{cursor:pointer; padding:10px 15px; margin:0 5px; text-transform:uppercase; background: #4CAF50; border:0; border-radius:3px; color:#fff}
         .buttons__item.blue{cursor:pointer; padding:10px 15px; margin:0 5px; text-transform:uppercase; background: #008CBA; border:0; border-radius:3px; color:#fff}
         .buttons__item.red{cursor:pointer; padding:10px 15px; margin:0 5px; text-transform:uppercase; background: #f44336; border:0; border-radius:3px; color:#fff}
+        .read{
+            margin: 15px 5px;
+        }
     </style>
 </head>
 <body>
@@ -74,7 +77,7 @@
     <button class="buttons__item blue">Авто</button>
     <button class="buttons__item red" id="all">Все</button>
 </div>
-<div class="read"><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/template_strings">Чтиво</a></div>
+<div class="read"><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/template_strings" target="_blank">Чтиво</a></div>
 <script>
     $(document).ready(function(){
         $('.buttons button').on('click', function(){
