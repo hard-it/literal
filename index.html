@@ -13,7 +13,7 @@
             margin: 20px 0;
             text-align: center;
         }
-        .filter{
+        .filter,.read{
             margin: 0 5px
         }
         .filter__txt{
@@ -44,7 +44,7 @@
     </style>
 </head>
 <body>
-<h1 class="title">Быстрый динамический фильтр в jQuery</h1>
+<h1 class="title">Быстрый динамический фильтр с использованием шаблонных литералов в jQuery</h1>
 <div class="filter">Фильтр по: <span class="filter__txt">Все</span></div>
 <ul id="list" class="list">
     <li class="list__item" data-attr="Авто">
@@ -74,6 +74,7 @@
     <button class="buttons__item blue">Авто</button>
     <button class="buttons__item red" id="all">Все</button>
 </div>
+<div class="read"><a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/template_strings">Чтиво</a></div>
 <script>
     $(document).ready(function(){
         $('.buttons button').on('click', function(){
