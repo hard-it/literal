@@ -4,36 +4,82 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    <div>Фильтр по: <span class="filter">Все</span>
-    <ul id="list" class="list">
-        <li data-attr="Союзники">Россия</li>
-        <li data-attr="Фашисты">Германия</li>
-        <li data-attr="Союзники">Франция</li>
-        <li data-attr="Фашисты">Япония</li>
-        <li data-attr="Фашисты">Италия</li>
-        <li data-attr="Союзники">Англия</li>
-        <li data-attr="Союзники">США</li>
-    </ul>
-    <div class="buttons">
-        <button>Фашисты</button>
-        <button>Союзники</button>
-        <button id="all">Все</button>
-    </div>
-    <script>
-        $(document).ready(function(){
-            $('.buttons button').on('click', function(){
-                let btn_txt = $(this).text();
-                $('.list li').show();
-                $('.list li').not(`.list li[data-attr="${btn_txt}"]`).hide();
-                $('.filter').text(btn_txt);
-            });
-            $('#all').on('click', function(){
-                $('.list li').show();
-            });
-        })
-    </script>
+    <style>
+        html, body{
+            font: 16px/1.5 Arial
+        }
+        .filter{
+            margin: 0 5px
+        }
+        .filter__txt{
+            font-weight: bold;
+        }
+        .list{
+            display: flex;
+            padding: 0;
+            margin: 15px 0;
+            list-style:none
+        }
+
+        .list__item{
+            max-width:150px;
+            margin: 0 5px;
+            border:5px solid #fff;
+            border-radius:3px;
+            box-shadow: 0 0  2px 2px rgba(0, 0, 0, .2);
+        }
+
+        .list__img{
+            width: 100%;
+            height:100%
+        }
+        .buttons__item.green{cursor:pointer; padding:10px 15px; margin:0 5px; text-transform:uppercase; background: #4CAF50; border:0; border-radius:3px; color:#fff}
+        .buttons__item.blue{cursor:pointer; padding:10px 15px; margin:0 5px; text-transform:uppercase; background: #008CBA; border:0; border-radius:3px; color:#fff}
+        .buttons__item.red{cursor:pointer; padding:10px 15px; margin:0 5px; text-transform:uppercase; background: #f44336; border:0; border-radius:3px; color:#fff}
+    </style>
 </head>
 <body>
-
+<div class="filter">Фильтр по: <span class="filter__txt">Все</span></div>
+<ul id="list" class="list">
+    <li class="list__item" data-attr="Авто">
+        <img src="images/5.jpg" class="list__img" alt="">
+    </li>
+    <li class="list__item" data-attr="Авиа">
+        <img src="images/1.jpg" class="list__img" alt="">
+    </li>
+    <li class="list__item" data-attr="Авто">
+        <img src="images/7.jpg" class="list__img" alt="">
+    </li>
+    <li class="list__item" data-attr="Авиа">
+        <img src="images/2.jpg" class="list__img" alt="">
+    </li>
+    <li class="list__item" data-attr="Авто">
+        <img src="images/6.jpg" class="list__img" alt="">
+    </li>
+    <li class="list__item" data-attr="Авиа">
+        <img src="images/3.jpg" class="list__img" alt="">
+    </li>
+    <li class="list__item"data-attr="Авиа">
+        <img src="images/4.jpg" class="list__img" alt="">
+    </li>
+</ul>
+<div class="buttons">
+    <button class="buttons__item green">Авиа</button>
+    <button class="buttons__item blue">Авто</button>
+    <button class="buttons__item red" id="all">Все</button>
+</div>
+<script>
+    $(document).ready(function(){
+        $('.buttons button').on('click', function(){
+            let btn_txt = $(this).text();
+            $('.list li').show();
+            $('.list li').not(`.list li[data-attr="${btn_txt}"]`).hide();
+            $('.filter__txt').text(btn_txt);
+        });
+        $('#all').on('click', function(){
+            $('.list li').show();
+        });
+    })
+</script>
 </body>
 </html>
