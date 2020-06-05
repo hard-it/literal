@@ -8,6 +8,11 @@
         html, body{
             font: 16px/1.5 Arial
         }
+        .title{
+            text-transform: uppercase;
+            margin: 20px 0;
+            text-align: center;
+        }
         .filter{
             margin: 0 5px
         }
@@ -39,6 +44,7 @@
     </style>
 </head>
 <body>
+<h1 class="title">Быстрый динамический фильтр с использованием литералов в jQuery</h1>
 <div class="filter">Фильтр по: <span class="filter__txt">Все</span></div>
 <ul id="list" class="list">
     <li class="list__item" data-attr="Авто">
